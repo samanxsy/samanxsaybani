@@ -1,0 +1,43 @@
+body{
+    background-color: #1A1A1A;
+    color: #00FF00;
+    font-family: 'Courier New', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.terminal {
+    border: 2px solid #00FF00;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
+    width: 760px;
+    height: 435px;
+}
+
+.command {
+    color: #00FF00;
+}
+
+.item {
+    color: #00FF00;
+}
+
+.links {
+    color: #00FF00;
+    margin-top: 20px;
+}
+
+.output-content{
+    margin-top: 50px;
+}
+
+button{
+    background-color: #1A1A1A;
+    border: none;
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+}
