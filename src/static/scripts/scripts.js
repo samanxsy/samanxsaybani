@@ -40,6 +40,18 @@ document.addEventListener("DOMContentLoaded", function () {
         If you don't get bored of reading, it worths a check!<br>
         <a href="https://medium.com/@samanxsaybani">https://medium.com/@samanxsaybani</a>`;
 
+        // Linkedin
+        const linkedinMessage = `I love my LinkedIn connections!<br>
+        <br>
+        Join them now!<br>
+        <a href="https://www.linkedin.com/in/samanxsaybani/">https://www.linkedin.com/in/samanxsaybani/</a>`
+
+        // Email
+        const emailMessage = `Got an interesting topic to talk about?<br>
+        <br>
+        Waste no time and hit my inbox to have a chat!<br>
+        <a href="mailto:samanxsaybani@email.com" class="output">samanxsaybani@gmail.com</a>`
+
         // Buttons
         switch (buttonText) {
             case "github":
@@ -52,10 +64,10 @@ document.addEventListener("DOMContentLoaded", function () {
                 return mediumMessage;
     
             case "linkedin":
-                return "LinkedIn: Connect with me on LinkedIn to stay updated.";
+                return linkedinMessage;
     
             case "email":
-                return "Email: Feel free to reach out to me at your@email.com.";
+                return emailMessage;
 
             default:
                 return "Select an option to learn more.";
