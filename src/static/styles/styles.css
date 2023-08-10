@@ -37,7 +37,13 @@ body{
 button{
     background-color: #1A1A1A;
     border: none;
-    font-size: medium;
+    font-size: large;
+    font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
+}
+
+a{
+    color: #00FF00;
+    font-family: 'Courier New', Courier, monospace;
 }

@@ -13,19 +13,50 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     function getContentForButton(buttonText) {
-        // Here you can define the content for each button
-        // For simplicity, I'll provide basic examples
+        // Output Messages
+
+        // GitHub
+        const gihubMessage = `I'm Glad you're interesting in my Coding!<br>
+        <br>
+        GitHub is where I keep all the cool stuff! There you can find lots of Cloud Infrastructure as Code and Python projects!<br>
+        <br>
+        Make sure to check it out now!<br>
+        <a href="https://github.com/samanxsy">https://github.com/samanxsy</a>`;
+
+        // Figma
+        const figmaMessage = `It's a pleasure to see you're curious about what I keep in Figma!<br>
+        <br>
+        There, I publish Cloud Solution Architecture Templates!<br>
+        From Disaster Recovery and Hybrid Cloud Deployment, to Data Analytic Solutions and Migration strategies, You can find it there!<br>
+        <br>
+        See for yourself!<br>
+        <a href="https://www.figma.com/@samanxsaybani">https://www.figma.com/@samanxsaybani</a>`;
+
+        // Medium
+        const mediumMessage = `It always feels good to see people are interested in my medium articles!<br>
+        <br>
+        In Medium, I document my processes. I write about the Cloud, Linux, and my Favourite tools!<br>
+        <br>
+        If you don't get bored of reading, it worths a check!<br>
+        <a href="https://medium.com/@samanxsaybani">https://medium.com/@samanxsaybani</a>`;
+
+        // Buttons
         switch (buttonText) {
             case "github":
-                return "GitHub: Here's my GitHub profile with all my projects.";
+                return gihubMessage;
+    
             case "figma":
-                return "Figma: Explore my design work on Figma.";
+                return figmaMessage;
+    
             case "medium":
-                return "Medium: Read my articles about various topics.";
+                return mediumMessage;
+    
             case "linkedin":
                 return "LinkedIn: Connect with me on LinkedIn to stay updated.";
+    
             case "email":
                 return "Email: Feel free to reach out to me at your@email.com.";
+
             default:
                 return "Select an option to learn more.";
         }
