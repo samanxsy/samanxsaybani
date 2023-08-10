@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return emailMessage;
 
             default:
-                return "Select an option to learn more.";
+                return "Click on something to learn more!";
         }
     }
 

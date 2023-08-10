@@ -17,23 +17,6 @@ body{
     height: 435px;
 }
 
-.command {
-    color: #00FF00;
-}
-
-.item {
-    color: #00FF00;
-}
-
-.links {
-    color: #00FF00;
-    margin-top: 20px;
-}
-
-.output-content{
-    margin-top: 50px;
-}
-
 button{
     background-color: #1A1A1A;
     border: none;
@@ -41,6 +24,11 @@ button{
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
+    color: #00FF00;
+}
+
+.output-content{
+    margin-top: 50px;
 }
 
 a{
