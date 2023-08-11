@@ -1,9 +1,11 @@
 /* J a v a S c r i p t */
 
 document.addEventListener("DOMContentLoaded", function () {
-    const outputButtons = document.querySelectorAll(".item");
+    // Assigning HTML Elements
+    const outputButtons = document.querySelectorAll(".buttons");
     const outputContent = document.querySelector(".output");
 
+    // Assigning Button Values
     outputButtons.forEach(function (button) {
         button.addEventListener("click", function () {
             const buttonText = button.textContent.toLowerCase();
@@ -12,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // Responding with a Message for each Button Value (ButtonText)
     function getContentForButton(buttonText) {
         // Output Messages
-
         // GitHub
         const gihubMessage = `I'm Glad you're interesting in my Coding!<br>
         <br>
@@ -26,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function () {
         // Figma
         const figmaMessage = `It's a pleasure to see you're curious about what I keep in Figma!<br>
         <br>
-        There, I publish Cloud Solution Architecture Templates!<br>
+        There, I publish Cloud Solution Architecture Diagrams as templates!<br>
         From Disaster Recovery and Hybrid Cloud Deployment, to Data Analytic Solutions and Migration strategies, You can find it there!<br>
         <br>
         See for yourself!<br>
@@ -52,21 +54,29 @@ document.addEventListener("DOMContentLoaded", function () {
         Waste no time and hit my inbox to have a chat!<br>
         <a href="mailto:samanxsaybani@email.com" class="output">samanxsaybani@gmail.com</a>`
 
+        // CLI prompt element
+        const cliPromt = document.getElementById("cli")
+
         // Buttons
         switch (buttonText) {
             case "github":
+                cliPromt.textContent = "userx@saman:~$ github"
                 return gihubMessage;
     
             case "figma":
+                cliPromt.textContent = "userx@saman:~$ figma"
                 return figmaMessage;
     
             case "medium":
+                cliPromt.textContent = "userx@saman:~$ medium"
                 return mediumMessage;
     
             case "linkedin":
+                cliPromt.textContent = "userx@saman:~$ linkedin"
                 return linkedinMessage;
     
             case "email":
+                cliPromt.textContent = "userx@saman:~$ email"
                 return emailMessage;
 
             default:

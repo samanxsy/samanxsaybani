@@ -15,16 +15,22 @@ body{
     box-shadow: 0 0 10px rgba(0, 255, 0, 0.5);
     width: 760px;
     height: 435px;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 button{
     background-color: #1A1A1A;
     border: none;
-    font-size: large;
+    font-size: 25px;
     font-weight: bold;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
     color: #00FF00;
+}
+
+.mobileprettyp{
+    display: none;
 }
 
 .output-content{
@@ -34,4 +40,30 @@ button{
 a{
     color: #00FF00;
     font-family: 'Courier New', Courier, monospace;
+    word-wrap: break-word;
+}
+
+.prettyp{
+    word-wrap: break-word;
+}
+
+
+@media (max-width: 650px) {
+    .terminal {
+        max-width: 80%;
+        height: fit-content;
+    }
+    .prettyp {
+        display: none;
+    }
+    .mobileprettyp {
+        word-wrap: break-word;
+        display: block;
+    }
+    .buttons{
+        display: block;
+    }
+    .pipe{
+        display: none;
+    }
 }
