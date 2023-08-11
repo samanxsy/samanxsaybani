@@ -33,8 +33,13 @@ button{
     display: none;
 }
 
-.output-content{
+.cli{
     margin-top: 50px;
+    font-weight: bolder;
+}
+
+.output-content{
+    margin-top: 25px;
 }
 
 a{
