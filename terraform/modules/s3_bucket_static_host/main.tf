@@ -7,6 +7,56 @@ resource "aws_s3_bucket" "bucket" {
   tags = var.bucket_tags
 }
 
+# Web hosting
+resource "aws_s3_bucket_website_configuration" "web_hosting" {
+  bucket = aws_s3_bucket.bucket.id
+
+  index_document {
+    suffix = var.index_file_name
+  }
+}
+
+# HTML
+resource "aws_s3_object" "index" {
+  bucket = aws_s3_bucket.bucket.id
+
+  key = var.index_file_key
+  acl = var.index_file_acl
+  source = var.index_file_path
+  content_type = var.index_file_type
+}
+
+# CSS
+resource "aws_s3_object" "css" {
+  bucket = aws_s3_bucket.bucket.id
+
+  key = var.css_file_key
+  acl = var.css_file_acl
+  source = var.css_file_path
+  content_type = var.css_file_type
+}
+
+# JavaScript
+resource "aws_s3_object" "script" {
+  bucket = aws_s3_bucket.bucket.id
+
+  key = var.script_file_key
+  acl = var.script_file_acl
+  source = var.script_file_path
+  content_type = var.script_file_type 
+}
+
+# favicon
+resource "aws_s3_object" "favicon" {
+  bucket = aws_s3_bucket.bucket.id
+
+  key = var.favicon_file_key
+  acl = var.favicon_file_acl
+  source = var.favicon_file_path
+  content_type = var.favicon_file_type 
+}
+
+
 # ACL
 resource "aws_s3_bucket_acl" "bucket_acl" {
   bucket = aws_s3_bucket.bucket.id
