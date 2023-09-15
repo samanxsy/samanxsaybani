@@ -14,6 +14,7 @@ module "static_web_host_s3" {
 
 	# ACL
 	acl_state = "public-read"
+	public_access_deny = false
 
 	# Index file
 	index_file_name = "index.html"

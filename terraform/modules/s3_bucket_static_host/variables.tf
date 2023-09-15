@@ -7,11 +7,14 @@ variable "bucket_name" {
   default = "s3-bucket"
 }
 
+variable "public_access_deny" {
+  type = bool
+}
+
 variable "index_file_name" {
   description = "Name of the index document"
   type = string
   default = "index.html"
-  
 }
 
 
