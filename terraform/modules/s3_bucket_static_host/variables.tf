@@ -7,7 +7,19 @@ variable "bucket_name" {
   default = "s3-bucket"
 }
 
-variable "public_access_deny" {
+variable "public_access_block" {
+  type = bool
+}
+
+variable "public_policy_block" {
+  type = bool
+}
+
+variable "public_acl_ignore" {
+  type = bool
+}
+
+variable "public_buckets_restrict" {
   type = bool
 }
 

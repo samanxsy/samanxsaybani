@@ -17,10 +17,10 @@ resource "aws_s3_bucket_website_configuration" "web_hosting" {
 }
 
 resource "aws_s3_bucket_public_access_block" "public_access" {
-  block_public_acls       = false
-  block_public_policy     = false
-  ignore_public_acls      = false
-  restrict_public_buckets = false
+  block_public_acls       = var.public_access_block
+  block_public_policy     = var.public_policy_block
+  ignore_public_acls      = var.public_acl_ignore
+  restrict_public_buckets = var.public_buckets_restrict
 }
 
 # HTML
