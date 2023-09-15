@@ -37,11 +37,6 @@ variable "index_file_key" {
   default = "index.html"
 }
 
-variable "index_file_acl" {
-  type = string
-  default = "public-read"
-}
-
 variable "index_file_path" {
   description = "path to the index.html file"
   type = string
@@ -56,11 +51,6 @@ variable "index_file_type" {
 variable "css_file_key" {
   type = string
   default = "index.html"
-}
-
-variable "css_file_acl" {
-  type = string
-  default = "public-read"
 }
 
 variable "css_file_path" {
@@ -79,11 +69,6 @@ variable "script_file_key" {
   default = "index.html"
 }
 
-variable "script_file_acl" {
-  type = string
-  default = "public-read"
-}
-
 variable "script_file_path" {
   description = "path to the index.html file"
   type = string
@@ -100,11 +85,6 @@ variable "favicon_file_key" {
   default = "index.html"
 }
 
-variable "favicon_file_acl" {
-  type = string
-  default = "public-read"
-}
-
 variable "favicon_file_path" {
   description = "path to the index.html file"
   type = string
@@ -116,24 +96,19 @@ variable "favicon_file_type" {
 }
 
 #
-variable "acl_state" {
-  description = "State of the Acess Control List for the Bucket"
-  type = string
-  default = "public-read"
-}
-
+# Versioning
 variable "versioning_status" {
   description = "Status of the versioning for the S3 bucket"
   type = string
-  # default = "Enabled"
 }
 
 variable "mfa_status" {
   description = "Status of the multi factor authentication for deleting objects in theS3 bucket"
   type = string
-  # default = "Enabled"
 }
 
+#
+# LifeCycle
 variable "lifecycle_rule_id" {
   description = "The ID for the lifecycle rule"
   type = string
