@@ -21,6 +21,7 @@ The code is hosted and served by an Amazon S3 bucket and it's infrastructure is 
 ### Features
 - Amazon S3 static web hosting
 - Infrastructure managed as code using Terraform
+- Remote state management with Terraform Cloud
 - Continuous Integration and Deployment using GitHub Actions
 - Reusable S3 module (For Web Hosting purposes)
 
@@ -29,7 +30,7 @@ To host the code for this portfolio interface, I leveraged Amazon S3 static webs
 ( xx So I'll be safe in case of an insane demand for my portfolio xx)
 
 ### Infrastructure as Code with Terraform
-I manage the infrastructure for this project using Terraform, enabling easy and consistent provisioning and management of AWS resources. The S3 bucket module of this repository is perfect for reusing in case you need a similar S3 web hosting ability, but have in mind to adjust the static object you need to serve accordingly.
+I manage the infrastructure for this project using Terraform, enabling easy and consistent provisioning and management of AWS resources. The Terraform State is managed and stored in Terraform Cloud
 
 ### Continuous Integration and Deployment with GitHub Actions
 I've implemented a CI/CD pipeline using GitHub Actions to automate the deployment process of the code and it's infrastructure. GitHub Actions automates the testing, building, and deployment of changes, ensuring that updates to my portfolio are delivered to S3 seamlessly
