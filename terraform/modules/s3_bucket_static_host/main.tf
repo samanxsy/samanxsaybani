@@ -48,6 +48,11 @@ resource "aws_s3_bucket_acl" "bucket_access_control" {
 resource "aws_s3_object" "index" {
   bucket = aws_s3_bucket.bucket.id
 
+  depends_on = [ 
+    aws_s3_bucket_ownership_controls.ownership_config,
+    aws_s3_bucket_public_access_block.public_access
+   ]
+
   key          = var.index_file_key
   acl          = var.index_file_acl
   source       = var.index_file_path
@@ -57,6 +62,11 @@ resource "aws_s3_object" "index" {
 # CSS
 resource "aws_s3_object" "css" {
   bucket = aws_s3_bucket.bucket.id
+
+  depends_on = [ 
+    aws_s3_bucket_ownership_controls.ownership_config,
+    aws_s3_bucket_public_access_block.public_access
+   ]
 
   key          = var.css_file_key
   acl          = var.css_file_acl
@@ -68,6 +78,11 @@ resource "aws_s3_object" "css" {
 resource "aws_s3_object" "script" {
   bucket = aws_s3_bucket.bucket.id
 
+  depends_on = [ 
+    aws_s3_bucket_ownership_controls.ownership_config,
+    aws_s3_bucket_public_access_block.public_access
+   ]
+
   key          = var.script_file_key
   acl          = var.script_file_acl
   source       = var.script_file_path
@@ -77,6 +92,11 @@ resource "aws_s3_object" "script" {
 # favicon
 resource "aws_s3_object" "favicon" {
   bucket = aws_s3_bucket.bucket.id
+
+  depends_on = [ 
+    aws_s3_bucket_ownership_controls.ownership_config,
+    aws_s3_bucket_public_access_block.public_access
+   ]
 
   key          = var.favicon_file_key
   acl          = var.favicon_file_acl
