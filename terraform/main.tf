@@ -8,52 +8,62 @@
 # Static Web Host S3 Bucket
 module "static_web_host_s3" {
   source = "./modules/s3_bucket_static_host"
-	
-	# Name
-	bucket_name = "samanxtest"
 
-	# ACL
-	public_access_block = false
-	public_policy_block = false
-	public_acl_ignore = false
-	public_buckets_restrict = false
+  # Name
+  bucket_name = "samanxtest"
 
-	# Index file
-	index_file_name = "index.html"
+  # ACL
+  public_access_block     = false
+  public_policy_block     = false
+  public_acl_ignore       = false
+  public_buckets_restrict = false
 
-	# HTML object
-	index_file_key = "index.html"
-	index_file_path = "../static_src/index.html"
-	index_file_type = "text/html"
+  # Ownership
+  object_ownership_status = "BucketOwnerPreferred"
 
-	# CSS
-	css_file_key = "styles.css"
-	css_file_path = "../static_src/styles.css"
-	css_file_type = "text/css"
+  # BUcket ACL
+  bucket_access_control_status = "public-read"
 
-	# JavaScript
-	script_file_key = "scripts.js"
-	script_file_path = "../static_src/scripts.js"
-	script_file_type = "application/javascript"
+  # Index file
+  index_file_name = "index.html"
 
-	# favicon
-	favicon_file_key = "icons8-cloud-16.png"
-	favicon_file_path = "../static_src/icons8-cloud-16.png"
-	favicon_file_type = "image/png"
+  # HTML object
+  index_file_key  = "index.html"
+  index_file_acl  = "public-read"
+  index_file_path = "../static_src/index.html"
+  index_file_type = "text/html"
 
-	# Versioning
-	versioning_status = "Disabled"
-	mfa_status = "Disabled"
+  # CSS
+  css_file_key  = "styles.css"
+  css_file_acl  = "public-read"
+  css_file_path = "../static_src/styles.css"
+  css_file_type = "text/css"
 
-	# LifeCycle
-	lifecycle_rule_id = "Archiving"
-	lifecycle_status = "Enabled"
-	transition_days = "100"
-	transition_storage_class = "INTELLIGENT_TIERING"
+  # JavaScript
+  script_file_key  = "scripts.js"
+  script_file_acl  = "public-read"
+  script_file_path = "../static_src/scripts.js"
+  script_file_type = "application/javascript"
 
-	# Tags
-	bucket_tags = {
-		Name = "portfolio-terminal"
-		Environment = "Dev"
-	}
+  # favicon
+  favicon_file_key  = "icons8-cloud-16.png"
+  favicon_file_acl  = "public-read"
+  favicon_file_path = "../static_src/icons8-cloud-16.png"
+  favicon_file_type = "image/png"
+
+  # Versioning
+  versioning_status = "Disabled"
+  mfa_status        = "Disabled"
+
+  # LifeCycle
+  lifecycle_rule_id        = "Archiving"
+  lifecycle_status         = "Enabled"
+  transition_days          = "100"
+  transition_storage_class = "INTELLIGENT_TIERING"
+
+  # Tags
+  bucket_tags = {
+    Name        = "portfolio-terminal"
+    Environment = "Dev"
+  }
 }

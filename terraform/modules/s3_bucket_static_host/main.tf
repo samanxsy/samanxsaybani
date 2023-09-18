@@ -4,7 +4,7 @@
 # bucket
 resource "aws_s3_bucket" "bucket" {
   bucket = var.bucket_name
-  tags = var.bucket_tags
+  tags   = var.bucket_tags
 }
 
 # Web hosting
@@ -26,12 +26,31 @@ resource "aws_s3_bucket_public_access_block" "public_access" {
   restrict_public_buckets = var.public_buckets_restrict
 }
 
+resource "aws_s3_bucket_ownership_controls" "ownership_config" {
+  bucket = aws_s3_bucket.bucket.id
+
+  rule {
+    object_ownership = var.object_ownership_status
+  }
+}
+
+resource "aws_s3_bucket_acl" "bucket_access_control" {
+  depends_on = [
+    aws_s3_bucket_ownership_controls.ownership_config,
+    aws_s3_bucket_public_access_block.public_access
+  ]
+
+  bucket = aws_s3_bucket.bucket.id
+  acl    = var.bucket_access_control_status
+}
+
 # HTML
 resource "aws_s3_object" "index" {
   bucket = aws_s3_bucket.bucket.id
 
-  key = var.index_file_key
-  source = var.index_file_path
+  key          = var.index_file_key
+  acl          = var.index_file_acl
+  source       = var.index_file_path
   content_type = var.index_file_type
 }
 
@@ -39,8 +58,9 @@ resource "aws_s3_object" "index" {
 resource "aws_s3_object" "css" {
   bucket = aws_s3_bucket.bucket.id
 
-  key = var.css_file_key
-  source = var.css_file_path
+  key          = var.css_file_key
+  acl          = var.css_file_acl
+  source       = var.css_file_path
   content_type = var.css_file_type
 }
 
@@ -48,18 +68,20 @@ resource "aws_s3_object" "css" {
 resource "aws_s3_object" "script" {
   bucket = aws_s3_bucket.bucket.id
 
-  key = var.script_file_key
-  source = var.script_file_path
-  content_type = var.script_file_type 
+  key          = var.script_file_key
+  acl          = var.script_file_acl
+  source       = var.script_file_path
+  content_type = var.script_file_type
 }
 
 # favicon
 resource "aws_s3_object" "favicon" {
   bucket = aws_s3_bucket.bucket.id
 
-  key = var.favicon_file_key
-  source = var.favicon_file_path
-  content_type = var.favicon_file_type 
+  key          = var.favicon_file_key
+  acl          = var.favicon_file_acl
+  source       = var.favicon_file_path
+  content_type = var.favicon_file_type
 }
 
 # Versioning
@@ -67,7 +89,7 @@ resource "aws_s3_bucket_versioning" "bucket_versioning" {
   bucket = aws_s3_bucket.bucket.id
 
   versioning_configuration {
-    status = var.versioning_status
+    status     = var.versioning_status
     mfa_delete = var.mfa_status
   }
 }
