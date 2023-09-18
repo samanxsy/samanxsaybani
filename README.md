@@ -29,7 +29,7 @@ To host the code for this portfolio interface, I leveraged Amazon S3 static webs
 ( xx So I'll be safe in case of an insane demand for my portfolio xx)
 
 ### Infrastructure as Code with Terraform
-I manage the infrastructure for this project using Terraform, enabling easy and consistent provisioning and management of AWS resources. The S3 bucket module of this repository is perfect for reusing in case you need a similar S3 web hosting ability
+I manage the infrastructure for this project using Terraform, enabling easy and consistent provisioning and management of AWS resources. The S3 bucket module of this repository is perfect for reusing in case you need a similar S3 web hosting ability, but have in mind to adjust the static object you need to serve accordingly.
 
 ### Continuous Integration and Deployment with GitHub Actions
 I've implemented a CI/CD pipeline using GitHub Actions to automate the deployment process of the code and it's infrastructure. GitHub Actions automates the testing, building, and deployment of changes, ensuring that updates to my portfolio are delivered to S3 seamlessly

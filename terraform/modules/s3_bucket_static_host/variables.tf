@@ -10,21 +10,25 @@ variable "bucket_name" {
 variable "public_access_block" {
   description = "Enable or Disable the public access block according to your needs"
   type        = bool
+  default     = true
 }
 
 variable "public_policy_block" {
   description = "Enable or Disable the public policy block according to your needs"
   type        = bool
+  default     = true
 }
 
 variable "public_acl_ignore" {
   description = "Determine whether to ignore or consider public acl"
   type        = bool
+  default     = true
 }
 
 variable "public_buckets_restrict" {
   description = "Enable or Disable the public restrictions according to your needs"
   type        = bool
+  default     = true
 }
 
 variable "object_ownership_status" {
@@ -35,6 +39,7 @@ variable "object_ownership_status" {
 variable "bucket_access_control_status" {
   description = "Determine the level of the Bucket ACL"
   type        = string
+  default     = "private"
 }
 
 variable "index_file_name" {
