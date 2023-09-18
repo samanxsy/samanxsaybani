@@ -24,7 +24,7 @@ jobs:
         with:
           terraform_version: 1.5.7
           terraform_wrapper: false
-  
+
       - name: Formating terraform code
         run: terraform fmt -recursive
 
@@ -42,3 +42,4 @@ jobs:
 
       # - name: DEPLOYING THE INFRASTRUCTURE
       #   run: terraform apply -auto-approve
+
