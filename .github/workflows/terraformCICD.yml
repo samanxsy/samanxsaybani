@@ -1,0 +1,44 @@
+name: Terraform CI
+on:
+  push:
+    paths-ignore:
+      - '**/README.md'
+    branches:
+      - master
+
+jobs:
+  terraform:
+    name: "Terraform CICD"
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: terraform
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Terraform SetUp
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.5.7
+          terraform_wrapper: false
+  
+      - name: Formating terraform code
+        run: terraform fmt -recursive
+
+      - name: Validating terraform config
+        run: terraform validate
+
+      - name: Configure Terraform Cloud Token
+        run: echo '{"credentials":{"app.terraform.io":{"token":"'${{ secrets.TF_API_TOKEN }}'"}}}' > $HOME/.terraform.d/credentials.tfrc.json
+
+      - name: Initializing Backend
+        run: terraform init
+
+      - name: Terraform Plan
+        run: terraform plan
+
+      # - name: DEPLOYING THE INFRASTRUCTURE
+      #   run: terraform apply -auto-approve
