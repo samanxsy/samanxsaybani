@@ -35,8 +35,8 @@ I manage the infrastructure for this project using Terraform, enabling easy and 
 ### Continuous Integration and Deployment with GitHub Actions
 I've implemented a CI/CD pipeline using GitHub Actions to automate the deployment process of the code and its infrastructure. GitHub Actions automates the testing, building, and deployment of changes, ensuring that updates to my portfolio are delivered to S3 seamlessly
 
-### License
-This project is licensed under the **[MIT License](https://opensource.org/license/mit/)**
-
 ### Portfolio Interface
 [Click here to check out my Portfolio!](https://samanxsaybani.s3.eu-central-1.amazonaws.com/index.html)
+
+### License
+This project is licensed under the **[MIT License](https://opensource.org/license/mit/)**
