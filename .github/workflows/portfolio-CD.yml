@@ -1,0 +1,27 @@
+name: portfolio CD
+on:
+  push:
+    paths:
+        - 'static_src/**'
+    branches:
+      - master
+
+jobs:
+  s3-object-sync:
+    runs-on: ubuntu-latest
+    env:
+      AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+      AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Synchronizing S3 bucket with new code
+        run: aws s3 sync static_src/ s3://samanxtest
+
+      - name: Listing objects
+        run: BUCKET=$(aws s3 ls s3://samanxtest/ | awk '{print $4}')
+
+      - name: Making all of the new objects public-read
+        run: for OBJECTS in $BUCKET; do aws s3api put-object-acl --bucket samanxtest --key $OBJECTS --acl public-read; done
