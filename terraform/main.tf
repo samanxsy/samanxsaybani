@@ -52,7 +52,7 @@ module "static_web_host_s3" {
   favicon_file_type = "image/png"
 
   # Versioning
-  versioning_status = "Disabled"
+  versioning_status = "Enabled"
   mfa_status        = "Disabled"
 
   # LifeCycle
