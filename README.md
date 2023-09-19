@@ -2,6 +2,7 @@
 Welcome to my portfolio repository!
 
 [![Terraform CI](https://github.com/samanxsy/portfolio-terminal/actions/workflows/terraformCICD.yml/badge.svg)](https://github.com/samanxsy/portfolio-terminal/actions/workflows/terraformCICD.yml)
+[![portfolio CD](https://github.com/samanxsy/portfolio-terminal/actions/workflows/portfolio-CD.yml/badge.svg)](https://github.com/samanxsy/portfolio-terminal/actions/workflows/portfolio-CD.yml)
 
 ## Table of Contents
 - About
