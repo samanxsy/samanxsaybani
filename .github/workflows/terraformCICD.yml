@@ -1,8 +1,8 @@
 name: Terraform CICD
 on:
   push:
-    paths-ignore:
-      - '**/README.md'
+    paths:
+      - 'terraform/**'
     branches:
       - master
 
