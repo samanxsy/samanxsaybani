@@ -6,11 +6,11 @@
 
 
 # Static Web Host S3 Bucket
-module "static_web_host_s3" {
+module "s3_bucket_static_host" {
   source = "./modules/s3_bucket_static_host"
 
   # Name
-  bucket_name = "samanxtest"
+  bucket_name = "samanxsaybani"
 
   # ACL
   public_access_block     = false
@@ -58,12 +58,12 @@ module "static_web_host_s3" {
   # LifeCycle
   lifecycle_rule_id        = "Archiving"
   lifecycle_status         = "Enabled"
-  transition_days          = "100"
+  transition_days          = "90"
   transition_storage_class = "INTELLIGENT_TIERING"
 
   # Tags
   bucket_tags = {
     Name        = "portfolio-terminal"
-    Environment = "Dev"
+    Environment = "Prod"
   }
 }
