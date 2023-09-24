@@ -23,6 +23,6 @@ jobs:
 
       - name: Listing objects and making them public-read
         run: |
-          BUCKET=$(aws s3 ls s3://samanxtest/ | awk '{print $4}')
+          BUCKET=$(aws s3 ls s3://samanxsaybani/ | awk '{print $4}')
           sleep 3
-          for OBJECTS in $BUCKET; do aws s3api put-object-acl --bucket samanxtest --key $OBJECTS --acl public-read; done
+          for OBJECTS in $BUCKET; do aws s3api put-object-acl --bucket samanxsaybani --key $OBJECTS --acl public-read; done

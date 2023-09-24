@@ -1,7 +1,4 @@
-/* 
-P o r t f o l i o T e r m i n a l 
-J a v a S c r i p t 
-*/
+/* J a v a S c r i p t */
 
 document.addEventListener("DOMContentLoaded", function () {
     // Assigning HTML Elements
