@@ -23,36 +23,52 @@ document.addEventListener("DOMContentLoaded", function () {
         GitHub is where I keep all the cool stuff! There you can find lots of Cloud Infrastructure as Code and Python projects!<br>
         <br>
         Make sure to check it out now!<br>
-        <a href="https://github.com/samanxsy">https://github.com/samanxsy</a>`;
+        <br>
+        - <a href="https://github.com/samanxsy">GitHub.com</a>`;
 
         // Figma
-        const figmaMessage = `It's a pleasure to see you're curious about what I keep in Figma!<br>
+        const figmaMessage = `It's a pleasure to see you're curious about what I keep there!<br>
         <br>
-        There, I publish Cloud Solution Architecture Diagrams as templates!<br>
-        From Disaster Recovery and Hybrid Cloud Deployment, to Data Analytic Solutions and Migration strategies, You can find it there!<br>
+        In Figma, I share cloud solutions and architecture diagrams as templates.<br>
+        <br>
+        From Disaster Recovery and hybrid cloud deployment to Data lake and Serverless solutions, You can find something there!<br>
         <br>
         See for yourself!<br>
-        <a href="https://www.figma.com/@samanxsaybani">https://www.figma.com/@samanxsaybani</a>`;
+        <br>
+        - <a href="https://www.figma.com/@samanxsaybani">Figma.com</a>`;
 
         // Medium
-        const mediumMessage = `It always feels good to see people are interested in my medium articles!<br>
+        const mediumMessage = `It always feels good to see people are interested in my medium profile!<br>
         <br>
-        In Medium, I document my processes. I write about the Cloud, Linux, and my Favourite tools!<br>
+        Medium is where I document my processes. I write about Cloud, Linux, and my Favourite tools and share my learning experience!<br>
         <br>
-        If you don't get bored of reading, it worths a check!<br>
-        <a href="https://medium.com/@samanxsaybani">https://medium.com/@samanxsaybani</a>`;
+        If you don't get bored of reading, you may find it interesting<br>
+        <br>
+        - <a href="https://samanxsaybani.medium.com/">medium.com</a>`;
 
         // Linkedin
-        const linkedinMessage = `I love my LinkedIn connections!<br>
+        const linkedinMessage = `I love my LinkedIn connections, Tap the link and let's connect!<br>
         <br>
-        Join them now!<br>
-        <a href="https://www.linkedin.com/in/samanxsaybani/">https://www.linkedin.com/in/samanxsaybani/</a>`
+        Also, If you feel like sharing some cool thoughts, then feel free to hit my Email inbox!<br>
+        <br>
+        <br>
+        - <a href="https://www.linkedin.com/in/samanxsaybani/">LinkedIn</a><br>
+        <br>
+        - <a href="mailto:samanxsaybani@gmail.com">samanxsaybani@gmail.com</a>`
 
         // Email
-        const emailMessage = `Got an interesting topic to talk about?<br>
+        const certificatesMessage = `I dedicate so much time to learning! as a result, I've earned some cool certificates such as:<br>
         <br>
-        Waste no time and hit my inbox to have a chat!<br>
-        <a href="mailto:samanxsaybani@email.com" class="output">samanxsaybani@gmail.com</a>`
+        + HashiCorp Certified Cloud Engineer<br>
+        + AWS Cloud Solution Architect<br>
+        + Microsoft Azure Developer Associate AZ-204<br>
+        + IBM DevOps and Software Engineering,<br>
+        , and a few more!<br>
+        <br>
+        Check my Credly and Coursera profile to see more!
+        <br>
+        - <a href="https://www.credly.com/users/samanxsaybani/badges" class="output">Credly</a>
+        - <a href="https://www.coursera.org/user/0eee59cd66601ef732dcdca7069dfecc" class="output">Coursera</a>`
 
         // CLI prompt element
         const cliPromt = document.getElementById("cli")
@@ -75,9 +91,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 cliPromt.textContent = "userx@saman:~$ linkedin"
                 return linkedinMessage;
     
-            case "email":
-                cliPromt.textContent = "userx@saman:~$ email"
-                return emailMessage;
+            case "certificates":
+                cliPromt.textContent = "userx@saman:~$ certificates"
+                return certificatesMessage;
 
             default:
                 return "Click on something to learn more!";
